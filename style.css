@@ -1,0 +1,199 @@
+/* 🌸 BASE BACKGROUND */
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(circle at top,
+    #CF9FFF 0%,
+    #5D3FD3 32%,
+    #BF40BF 58%,
+    #E6C8FF 78%,
+    #F7ECFF 100%);
+
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ✨ TEXT GLOW */
+.glow {
+  color: #5D3FD3;
+  text-shadow:
+    0 0 8px #CF9FFF,
+    0 0 16px #BF40BF,
+    0 0 30px #5D3FD3;
+  z-index: 2;
+}
+
+/* 🫧 BUBBLES */
+/* 🫧 BUBBLE CONTAINER */
+#bubble-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: auto; /* ✅ allow mouse */
+  z-index: 1;
+}
+
+/* 🫧 BUBBLES */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer; /* nice UX */
+
+  background: radial-gradient(circle at top left,
+    rgba(255,255,255,0.9),
+    rgba(191,64,191,0.6),
+    rgba(93,63,211,0.4));
+
+  opacity: 0.7;
+  animation: floatUp linear infinite;
+}
+
+/* 💥 POP EFFECT — stops floating */
+.bubble.pop {
+  animation: pop 0.35s ease-out forwards !important;
+}
+
+
+
+@keyframes floatUp {
+  from {
+    transform: translateY(110vh) scale(0.8);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateY(-20vh) scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+@keyframes pop {
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.valentine-box {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 30px 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  font-size: 1.1rem;
+  padding: 10px 22px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#yesBtn {
+  background: #BF40BF;
+  color: white;
+}
+
+#yesBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #BF40BF;
+}
+
+#noBtn {
+  background: #CF9FFF;
+  color: #4a235a;
+  position: relative;
+}
+
+#response {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #5D3FD3;
+}
+/* 💬 Popup */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px 35px;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 0 30px rgba(191, 64, 191, 0.6);
+  display: none;
+}
+
+.popup p {
+  font-size: 1.2rem;
+  color: #5D3FD3;
+}
+
+.popup button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #BF40BF;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(110vh) scale(0.6); /* start smaller */
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(-20vh) scale(1.4); /* grow while going up */
+    opacity: 0.8;
+  }
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Valentine question text */
+.valentine-box h1 {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Response message */
+#response {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+/* 💬 Moving Popup */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px 35px;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 0 30px rgba(191, 64, 191, 0.6);
+  display: none;
+  transition: top 0.6s ease, left 0.6s ease;
+}
+
+.popup p {
+  font-size: 1.2rem;
+  color: #5D3FD3;
+}
